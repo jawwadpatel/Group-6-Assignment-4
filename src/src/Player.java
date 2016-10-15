@@ -27,7 +27,8 @@ public class Player {
 	}
 	
 	public boolean balanceExceedsLimitBy(int amount) {
-		return (balance - amount > limit);
+		// TODO: Change condition to allow player to play until limit is reached.
+		return (balance - amount >= limit);
 	}
 	
 	public void takeBet(int bet) {
@@ -38,7 +39,10 @@ public class Player {
 	
 	public void receiveWinnings(int winnings) {
 		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
-		balance = balance + winnings;		
+		
+		System.out.println("balance: " +  balance);
+		balance = balance + winnings;				
+		
 	}
 	
 	public String toString() {
